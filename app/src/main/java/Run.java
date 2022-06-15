@@ -10,13 +10,27 @@ public class Run
     protected Date startingTime;
     protected Date startingDate;
     protected ArrayList<Location> route;
+    protected int watched;
+    protected Runner runner;
 
-    public Run(double distance, Date duration, Date startingTime, Date startingDate) {
+    public Run(Runner runner) {
+        this.distance = -1.0;
+        this.duration = null;
+        this.startingTime = null;
+        this.startingDate = null;
+        this.route = new ArrayList<Location>();
+        this.watched=0;
+        this.runner=runner;
+    }
+
+    public Run(double distance, Date duration, Date startingTime, Date startingDate, Runner runner) {
         this.distance = distance;
         this.duration = duration;
         this.startingTime = startingTime;
         this.startingDate = startingDate;
         this.route = new ArrayList<Location>();
+        this.watched=0;
+        this.runner=runner;
     }
 
     public double getDistance() {
@@ -57,5 +71,22 @@ public class Run
 
     public void setRoute(ArrayList<Location> route) {
         this.route = route;
+    }
+
+    public Runner getRunner() {
+        return runner;
+    }
+
+    public void setRunner(Runner runner) {
+        this.runner = runner;
+    }
+
+    public int getWatched() {
+        return watched;
+    }
+
+    public void addWatched()
+    {
+        this.watched++;
     }
 }

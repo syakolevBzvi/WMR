@@ -8,15 +8,26 @@ public class Race
     private String name;
     private Location location;
     private Date date;
-    private ArrayList<Location> route;
-    private ArrayList<Runner> runners;
+    private ArrayList<Route> routes;
+    private ArrayList<RaceRun> runners;
+    private int index;
+
+    public Race(String name, Location location, Date date, int index) {
+        this.name = name;
+        this.location = location;
+        this.date = date;
+        this.runners = new ArrayList<RaceRun>();
+        this.routes = new ArrayList<Route>();
+        this.index=index;
+    }
 
     public Race(String name, Location location, Date date) {
         this.name = name;
         this.location = location;
         this.date = date;
-        this.runners = new ArrayList<Runner>();
-        this.route = new ArrayList<Location>();
+        this.runners = new ArrayList<RaceRun>();
+        this.routes = new ArrayList<Route>();
+        this.index=-1;
     }
 
     public String getName() {
@@ -43,19 +54,19 @@ public class Race
         this.date = date;
     }
 
-    public ArrayList<Location> getRoute() {
-        return route;
+    public ArrayList<Route> getRoutes() {
+        return routes;
     }
 
-    public void setRoute(ArrayList<Location> route) {
-        this.route = route;
+    public void setRoutes(ArrayList<Route> routes) {
+        this.routes = routes;
     }
 
-    public ArrayList<Runner> getRunners() {
+    public ArrayList<RaceRun> getRunners() {
         return runners;
     }
 
-    public void addRunner(Runner runner)
+    public void addRunner(RaceRun runner)
     {
         this.runners.add(runner);
     }
@@ -63,5 +74,15 @@ public class Race
     public void removeRunner(int index)
     {
         this.runners.remove(index);
+    }
+
+    public void addRoute(Route route)
+    {
+        this.routes.add(route);
+    }
+
+    public void removeRoute(int index)
+    {
+        this.routes.remove(index);
     }
 }
