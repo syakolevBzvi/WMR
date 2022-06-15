@@ -4,11 +4,12 @@ public class Group
 {
     private String name;
     private ArrayList<Runner> runners;
-    private Coach coach;
+    private ArrayList<Coach> coaches;
 
     public Group(String name, Coach coach) {
         this.name = name;
-        this.coach = coach;
+        this.coaches = new ArrayList<Coach>();
+        this.coaches.add(coach);
         this.runners = new ArrayList<Runner>();
     }
 
@@ -24,12 +25,8 @@ public class Group
         return runners;
     }
 
-    public Coach getCoach() {
-        return coach;
-    }
-
-    public void setCoach(Coach coach) {
-        this.coach = coach;
+    public ArrayList<Coach> getCoaches() {
+        return coaches;
     }
 
     public void addRunner(Runner runner)

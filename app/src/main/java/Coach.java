@@ -2,13 +2,18 @@ import java.util.Date;
 
 public class Coach extends Runner
 {
-    private Date registerDate;
+    private Date registerExpiredDate;
 
-    public Coach(String name, Date birtdate, String gender) {
+    public Coach(String name, Date birtdate, String gender, Date registerExpiredDate) {
         super(name, birtdate, gender);
+        this.registerExpiredDate = registerExpiredDate;
     }
 
-    public Date getRegisterDate() {
-        return registerDate;
+    public Date getRegisterExpiredDate() {
+        return registerExpiredDate;
+    }
+
+    public void setRegisterExpiredDate(Date registerExpiredDate) {
+        this.registerExpiredDate = registerExpiredDate;
     }
 }
